@@ -32,5 +32,16 @@
 <!-- Angular2
 <user-profile></user-profile>
 -->
-<!-- Angular3-->
+<!-- Angular3
 <app-list-movie></app-list-movie>
+-->
+<h1>MENU : </h1>
+<ul>
+  <li>
+    <a [routerLink]="['/sign-up']">SIGN-UP</a>
+  </li>
+  <li>
+    <a [routerLink]="['/user-profile']">USER-PROFILE</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
