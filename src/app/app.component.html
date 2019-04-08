@@ -1,5 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!--
+  <div style="text-align:center">
   <h1>
     Welcome to {{ title }} website!
   </h1>
@@ -7,15 +8,29 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+  <li [ngClass]="{'colorName': theNameIsRed}">TEST</li>
+  <li [ngStyle]="{backgroundColor: theNameIsRed ? 'red' : 'yellow'}">TEST</li>
+  <li *ngIf="displayList">TEST</li>
+  <li>TEST</li>
+  <li>TEST</li>
 </ul>
+<ul *appDisplayGuests="displayList">
+  <li>TOTO</li>
+  <li>TOTO</li>
+  <li>TOTO</li>
+  <li>TOTO</li>
+</ul>
+<ul *ngFor="let song of songList"> 
+  <li>{{ song }}</li>
+</ul>
+<h2 appHighLight>TEST A.D</h2>
+-->
+
+<!-- Angular1 
 <sign-up></sign-up>
+--> 
+<!-- Angular2
 <user-profile></user-profile>
+-->
+<!-- Angular3-->
+<app-list-movie></app-list-movie>

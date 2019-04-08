@@ -16,7 +16,6 @@ export class UserProfileComponent implements OnInit {
     photo : 'https://randomuser.me/api/portraits/lego/2.jpg'
   };
 
-  quote = "two beer or not to beer"
    
   onClickMe() {
     let age = document.getElementById("age"); 

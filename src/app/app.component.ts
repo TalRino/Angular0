@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bina Loup';
+
+  theNameIsRed:boolean = true;
+
+  displayList:boolean = true;
+
+  songList:string[] = ["HowWeDo", "InDaClub", "HandsUp", "OneNight", "EnDD"];
+
 }
