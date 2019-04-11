@@ -1,5 +1,33 @@
-<p>
-  {{ title }}
-</p>
+<!-- <h1><p>{{ email }}</p> <input [(ngModel)]="email" type="email" name="email" /></h1> -->
 
-<h1><p>{{ email }}</p> <input [(ngModel)]="email" type="email" name="email" /></h1>
+
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+
+
+  <div>
+    <label for="user-order">User : </label>
+    <input name="user-order" type="text" [(ngModel)]="model.user" #user="ngModel" required minlength="5" maxlength="25"
+      autocomplete="off">
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div *ngIf="user.errors">
+      <span *ngIf="user.errors.required">Le champs user est requis.</span>
+      <span *ngIf="user.errors.minlength">Le champ user ne doit pas dépasser 4 caractères.</span>
+      <span *ngIf="user.errors.maxlength">Le champ user ne doit pas dépasser 25 caractères.</span>
+    </div>
+  </div>
+  <br />
+  <div>
+    <label for="mail-order">Mail : </label>
+    <input name="mail-order" type="email" [(ngModel)]="model.mail" #mail="ngModel" autocomplete="off" required email>
+  </div>
+  <div *ngIf="myForm.submitted">
+    <div *ngIf="mail.errors">
+      <span *ngIf="mail.errors.required">Le champ email est requis.</span>
+      <span *ngIf="mail.errors.email">L'adresse email doit être valide.</span>
+    </div>
+  </div>
+  <br />
+  <button type="reset">Restaurer</button>&nbsp;
+  <button type="submit">Sauvegarder</button>
+</form>
